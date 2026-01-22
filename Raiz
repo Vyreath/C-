@@ -1,0 +1,25 @@
+namespace Raiz
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Dame un num");
+            double numero = Convert.ToDouble(Console.ReadLine());
+            double x = numero/3;
+            for (double i = 0; i <= numero; i++)
+            {
+                
+                double resultado = (x+numero/x)/2;
+
+                if (resultado * resultado - numero <= 0.001 )
+                {
+                    Console.WriteLine($"El resultado aproximado es: {resultado}");
+                    break;
+                }
+
+                x = resultado;
+            }
+        }
+    }
+}
