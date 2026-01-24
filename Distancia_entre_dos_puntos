@@ -1,0 +1,38 @@
+namespace Distancia_entre_dos_puntos
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Dame un x1");
+            double x1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Dame un x2");
+            double x2 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Dame un y1");
+            double y1 = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Dame un y2");
+            double y2 = Convert.ToDouble(Console.ReadLine());
+
+            double resultadoRestasX = (x2 - x1);
+            double resultadoRestasY = (y2 - y1);
+
+            double numero = resultadoRestasX * resultadoRestasX + resultadoRestasY * resultadoRestasY;
+
+
+            double d = numero / 3;
+            for (double i = 0; i <= numero; i++)
+            {
+
+                double resultado = (d + numero / d) / 2;
+
+                if (resultado * resultado - numero <= 0.001)
+                {
+                    Console.WriteLine($"La distancia aproximado es: {resultado}");
+                    break;
+                }
+
+                d = resultado;
+            }
+        }
+    }
+}
